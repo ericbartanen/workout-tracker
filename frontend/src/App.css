@@ -1,0 +1,71 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+}
+
+header {
+  border-bottom:#DFDCE3 solid;
+  padding-bottom: 2rem;
+}
+
+tr th {
+  border: 2px solid #DFDCE3;
+  padding: 8px;
+}
+
+table, tr td {
+  border: 2px solid #DFDCE3;
+  border-collapse: collapse;
+  padding: 5px;
+  text-align: center;
+  margin: 0px;
+
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+input, select {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 5px;
+  margin: 5px;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.App-nav-button, button {
+  border: 5px solid #19323c;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #19323c;
+  color: #f3f7f0;
+}
+.App-nav a {
+  color: #f3f7f0;
+  margin: 10px;
+  text-decoration: none;
+}
+
+.App-nav a:hover, button:hover {
+  color:  #94618E;
+}
+
+footer {
+  position: relative;
+  font-size: 1rem;
+  width: 100%;
+  margin: 20px;;
+}
