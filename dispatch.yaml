@@ -1,0 +1,9 @@
+dispatch:
+  - url: "backend-dot-exercise-tracker-eb.wn.r.appspot.com/*"
+    service: backend
+  
+  - url: "exercise-tracker-eb.wn.r.appspot.com/*"
+    service: frontend
+
+  - url: "default-dot-exercise-tracker-eb.wn.r.appspot.com/*"
+    service: frontend

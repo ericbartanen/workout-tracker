@@ -14,7 +14,7 @@ export const EditExercisePage = ( { exerciseToEdit } ) => {
 
     const editExercise = async () => {
         const editedExercise = {name, equipment, weight, unit, reps, description};
-        const response = await fetch(`/api/exercises/${exerciseToEdit._id}`, {
+        const response = await fetch(`https://backend-dot-exercise-tracker-eb.wn.r.appspot.com/api/exercises/${exerciseToEdit._id}`, {
             method: 'PUT',
             body: JSON.stringify(editedExercise),
             headers: {

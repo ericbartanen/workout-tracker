@@ -20,7 +20,7 @@ export const CreateExercisePage = () => {
     
     const createExercise = async () => {
         const newExercise = {name, equipment, weight, unit, reps, description};
-        const response = await fetch(`/api/exercises`, {
+        const response = await fetch(`https://backend-dot-exercise-tracker-eb.wn.r.appspot.com/api/exercises`, {
             method: 'POST',
             body: JSON.stringify(newExercise),
             headers: {
@@ -32,7 +32,7 @@ export const CreateExercisePage = () => {
             // alert(`You successfully created ${name}`)
             navigate("/");
         } else {
-            alert('One of your entries is incorrect, please try again.')
+            alert('Whoops, an error occured. Please try again.')
             navigate("/create-exercise");
         }
     };

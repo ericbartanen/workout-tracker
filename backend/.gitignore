@@ -1,3 +1,7 @@
+.gcloudignore
+.git
+.gitignore
 .env
-node_modules
+staging.yaml
+node_modules/
 package-lock.json
