@@ -6,4 +6,4 @@ The live app can be found here: https://exercise-tracker-eb.wn.r.appspot.com/
 
 ## Road Map
 - [ ] Create page to keep track of favorite workout routines
-
+- [ ] Create loading icon while table populates
