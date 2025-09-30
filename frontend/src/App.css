@@ -26,17 +26,70 @@ table, tr td {
 
 }
 
-.input-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 30px;
+form {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 34px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12 px rgba(0,0,0,0.8);
+  font-family: 'Segoe UI', sans-serif;
 }
 
-input, select {
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 5px;
-  margin: 5px;
+h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+  color: #333;
+}
+
+.input-form {
+  margin-bottom: 18px;
+}
+
+label, select {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: #444;
+  font-weight: 500;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 4px rgba(0,102,204,0.3)
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #0066cc;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #0055aa;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
 }
 
 .nav-container {
@@ -46,7 +99,7 @@ input, select {
   padding: 20px;
 }
 
-.App-nav-button, button {
+.App-nav-button {
   border: 5px solid #19323c;
   border-radius: 5px;
   padding: 5px;
@@ -59,7 +112,7 @@ input, select {
   text-decoration: none;
 }
 
-.App-nav a:hover, button:hover {
+.App-nav a:hover {
   color:  #94618E;
 }
 

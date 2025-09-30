@@ -38,53 +38,70 @@ export const CreateExercisePage = () => {
     };
 
     return (
-        <div>
+        <form>
             <h2>New PR</h2>
+
             <div className='input-form'>
                 <label for='exercise'>Exercise Name:</label>
                 <input
                     id='exercise'
-                    placeholder='Exercise Name'
+                    placeholder='Bench Press'
                     type="text"
                     value={name}
                     onChange={e => setName(e.target.value)} />
+            </div> 
+
+            <div className='input-form'>
                 <label for='equipment'>Equipment Type:</label>
                 <input
                     id='equipment'
-                    placeholder='Equipment Type'
+                    placeholder='barbell'
                     type="text"
                     value={equipment}
                     onChange={e => setEquipment(e.target.value)} />
-                                <label for='weight'>Weight:</label>
+            </div>
+
+            <div className='input-form'>
+                <label for='weight'>Weight:</label>
                 <input
                     id='weight'
-                    placeholder='Weight'
+                    placeholder='e.g. 225'
                     type="number"
                     value={weight}
                     onChange={e => setWeight(e.target.value)} />
+            </div>
+
+            <div className='input-form'>    
                 <label for='units'>Units:</label>
                 <select id='units' value={unit} onChange={e => setUnit(e.target.value)}>
                     <option value="lbs">lbs</option>
                     <option value="kgs">kgs</option>
                 </select>
+            </div>
+
+            <div className='input-form'>
                 <label for='reps'>Number of Reps:</label>
                 <input
                     id='reps'
-                    placeholder='Number of Reps'
+                    placeholder='e.g. 5'
                     type="number"
                     value={reps}
                     onChange={e => setReps(e.target.value)} />
+            </div>
+
+            <div className='input-form'>    
                 <label for='description'>Description:</label>
                 <input
                     id='description'
-                    placeholder='Description'
+                    placeholder='standard flat bench'
                     type="text"
                     value={description}
                     onChange={e => setDescription(e.target.value)} />
-            </div>
+            </div> 
+
             <button onClick={createExercise}>Save</button>
             <ToastContainer />
-        </div>
+        </form>
     );
 }
 
