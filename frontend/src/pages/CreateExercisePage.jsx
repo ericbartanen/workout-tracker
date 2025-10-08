@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 export const CreateExercisePage = () => {
 
@@ -13,13 +11,11 @@ export const CreateExercisePage = () => {
     const [description, setDescription] = useState('');
 
     const navigate = useNavigate();
-
-    const showToastMessage = () => {
-        toast.success("PR Added!");
-    };
     
-    const createExercise = async () => {
-        const newExercise = {name, equipment, weight, unit, reps, description};
+    const createExercise = async (e) => {
+        e.preventDefault()
+        const newExercise = {name, equipment, weight, unit, reps, description};        
+
         const response = await fetch(`https://backend-dot-exercise-tracker-eb.wn.r.appspot.com/api/exercises`, {
             method: 'POST',
             body: JSON.stringify(newExercise),
@@ -27,14 +23,12 @@ export const CreateExercisePage = () => {
                 'Content-Type': 'application/json',
             }
         });
-        if (response.status === 201) {
-            showToastMessage();
-            // alert(`You successfully created ${name}`)
+        if (response.ok) {
             navigate("/");
         } else {
             alert('Whoops, an error occured. Please try again.')
             navigate("/create-exercise");
-        }
+         }
     };
 
     return (
@@ -42,7 +36,7 @@ export const CreateExercisePage = () => {
             <h2>New PR</h2>
 
             <div className='input-form'>
-                <label for='exercise'>Exercise Name:</label>
+                <label htmlFor='exercise'>Exercise Name:</label>
                 <input
                     id='exercise'
                     placeholder='Bench Press'
@@ -52,7 +46,7 @@ export const CreateExercisePage = () => {
             </div> 
 
             <div className='input-form'>
-                <label for='equipment'>Equipment Type:</label>
+                <label htmlFor='equipment'>Equipment Type:</label>
                 <input
                     id='equipment'
                     placeholder='barbell'
@@ -62,7 +56,7 @@ export const CreateExercisePage = () => {
             </div>
 
             <div className='input-form'>
-                <label for='weight'>Weight:</label>
+                <label htmlFor='weight'>Weight:</label>
                 <input
                     id='weight'
                     placeholder='e.g. 225'
@@ -72,7 +66,7 @@ export const CreateExercisePage = () => {
             </div>
 
             <div className='input-form'>    
-                <label for='units'>Units:</label>
+                <label htmlFor='units'>Units:</label>
                 <select id='units' value={unit} onChange={e => setUnit(e.target.value)}>
                     <option value="lbs">lbs</option>
                     <option value="kgs">kgs</option>
@@ -80,7 +74,7 @@ export const CreateExercisePage = () => {
             </div>
 
             <div className='input-form'>
-                <label for='reps'>Number of Reps:</label>
+                <label htmlFor='reps'>Number of Reps:</label>
                 <input
                     id='reps'
                     placeholder='e.g. 5'
@@ -90,7 +84,7 @@ export const CreateExercisePage = () => {
             </div>
 
             <div className='input-form'>    
-                <label for='description'>Description:</label>
+                <label htmlFor='description'>Description:</label>
                 <input
                     id='description'
                     placeholder='standard flat bench'
@@ -100,7 +94,6 @@ export const CreateExercisePage = () => {
             </div> 
 
             <button onClick={createExercise}>Save</button>
-            <ToastContainer />
         </form>
     );
 }

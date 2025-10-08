@@ -16,11 +16,6 @@ router.post(
     body('description'),
     (req, res) => {
 
-    // const errors = validationResult(req);
-    // if (!errors.isEmpty()) {
-    //     return res.status(400).json({Error: 'Invalid request', message: errors.message})
-    // }
-
     exercises.createExercise(req.body.name, req.body.equipment, req.body.weight, req.body.unit, req.body.reps, req.body.description)    
         .then(exercise => {
             res.status(201).json(exercise);

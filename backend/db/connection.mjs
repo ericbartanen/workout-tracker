@@ -3,7 +3,6 @@ import 'dotenv/config';
 import http from 'http';
 
 // Import GCP Secret Manager client and instantiate
-// const {SecretManagerServiceClient} = require('@google-cloud/secret-manager');
 import { SecretManagerServiceClient } from '@google-cloud/secret-manager';
 const secretManagerClient = new SecretManagerServiceClient();
 
