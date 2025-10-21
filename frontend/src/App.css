@@ -32,7 +32,7 @@ form {
   padding: 34px;
   background: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 4px 12 px rgba(0,0,0,0.8);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   font-family: 'Segoe UI', sans-serif;
 }
 
@@ -94,7 +94,7 @@ textarea {
 
 .nav-container {
   display: flex;
-  flex-direction: row wrap;
+  flex-wrap: wrap;
   justify-content: space-around;
   padding: 20px;
 }
@@ -121,4 +121,50 @@ footer {
   font-size: 1rem;
   width: 100%;
   margin: 20px;;
+}
+
+/* === Mobile Styles === */
+@media (max-width: 600px) {
+  .App {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  header {
+    padding-bottom: 1rem;
+  }
+
+  form {
+    width: 90%;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: none;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 0.9rem;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .App-nav-button {
+    width: 90%;
+  }
+
+  button {
+    font-size: 0.95rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    margin: 10px 0;
+  }
 }
